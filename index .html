@@ -1,0 +1,320 @@
+I understand completely! You want the actual **HTML and CSS code** to build a real, working website for your institute, not just another image template.
+
+Here is a complete, clean, and modern landing page code for **INFRA Institute of Computer Education**. It is designed with a professional dark blue header to match your logo, using vibrant accents (orange, green, cyan, and purple) to highlight your core courses.
+
+You can copy this code and save it as an `index.html` file to see your website live in any browser!
+
+---
+
+### `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRA - Institute of Computer Education</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #1a365d; /* Dark Blue matching logo background */
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-placeholder {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .logo-placeholder span {
+            color: #e28743; /* Accent color from logo */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00b4d8; /* Cyan accent from logo */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
+            color: white;
+            padding: 100px 5% 80px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #e2e8f0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #e28743; /* Logo Orange */
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #cd6e29;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1a365d;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #76b041; /* Logo Green */
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1max));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, border-top 0.3s ease;
+            border-top: 5px solid #1a365d;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Color accents mapping to the INFRA logo */
+        .graphic-design { border-top-color: #e28743; } /* Orange */
+        .web-design { border-top-color: #00b4d8; }     /* Cyan */
+        .digital-marketing { border-top-color: #9b5de5; } /* Purple */
+
+        .course-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .course-card p {
+            color: #718096;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact & Inquiry Form */
+        .contact-section {
+            background-color: #edf2f7;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #2a4365;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-placeholder">I N F R A</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#admission">Admissions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Empower Your Future with IT Skills</h1>
+        <p>Join INFRA Institute of Computer Education. Master Graphic Designing, Web Development, and Digital Marketing from industry experts.</p>
+        <a href="#admission" class="cta-btn">Enroll Now</a>
+    </section>
+
+    <section class="courses-section" id="courses">
+        <h2 class="section-title">Our Featured Courses</h2>
+        <div class="courses-grid">
+            
+            <div class="course-card graphic-design">
+                <h3>Graphic Designing</h3>
+                <p>Learn Adobe Photoshop, Illustrator, UI/UX layouts, and branding to launch your creative career.</p>
+            </div>
+
+            <div class="course-card web-design">
+                <h3>Web Designing & Dev</h3>
+                <p>Master HTML5, CSS3, JavaScript, and responsive design frameworks to build beautiful websites.</p>
+            </div>
+
+            <div class="course-card digital-marketing">
+                <h3>Digital Marketing</h3>
+                <p>Grow businesses using SEO, Social Media Marketing (SMM), and targeted ad campaigns.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="admission">
+        <h2 class="section-title">Get Admission / Inquiry</h2>
+        <div class="form-container">
+            <form action="#" method="POST" onsubmit="alert('Thank you for your inquiry! We will contact you soon.'); return false;">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select id="course" required>
+                        <option value="">-- Choose a Course --</option>
+                        <option value="graphic">Graphic Designing</option>
+                        <option value="web">Web Designing</option>
+                        <option value="marketing">Digital Marketing</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 INFRA Institute of Computer Education. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+```
+
+---
+
+### How to use this:
+
+1. Copy all the text inside the code block above.
+2. Open **Notepad** (or any text editor like VS Code).
+3. Paste the code and save the file as **`index.html`** (make sure it doesn't save as a `.txt` file).
+4. Double-click your new `index.html` file, and it will open up instantly as a clean web page in your web browser!
